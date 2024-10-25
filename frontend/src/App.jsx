@@ -6,12 +6,15 @@ import ChangePassword from "./Pages/ChangePassword";
 import EmailVerification from "./Pages/EmailVerification";
 import ForgotPassword from "./Pages/ForgotPassword";
 import Schedule from "./Pages/Schedule";
+import EmployeeProfile from "./Components/EmployeeProfile";
+import Employedetail from "./Pages/Employedetail";
+import Admindashboard from "./Pages/Admindashboard";
 
 const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <Admindashboard />,
     },
     {
       path: "/register",
@@ -33,10 +36,22 @@ const App = () => {
       path: "/forgot-password",
       element: <ForgotPassword />,
     },
-    // {
-    //   path: "/schedule",
-    //   element: <Schedule />,
-    // },
+    {
+      path: "/schedule",
+      element: <Schedule />,
+    },
+    {
+      path: "/EmployeeProfile",
+      element: <EmployeeProfile />,
+    },
+    {
+      path: "/demo",
+      element: <Employedetail />,
+    },
+    {
+      path: "/Admindashboard",
+      element: <Admindashboard />,
+    },
   ]);
   return (
     <>
