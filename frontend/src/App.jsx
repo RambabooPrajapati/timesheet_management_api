@@ -6,6 +6,7 @@ import ChangePassword from "./Pages/ChangePassword";
 import EmailVerification from "./Pages/EmailVerification";
 import ForgotPassword from "./Pages/ForgotPassword";
 import Schedule from "./Pages/Schedule";
+import Worksheet from "./Pages/Worksheet";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const App = () => {
     //   path: "/schedule",
     //   element: <Schedule />,
     // },
+    {
+      path: "/Worksheet",
+      element: <Worksheet />,
+    },
   ]);
   return (
     <>
