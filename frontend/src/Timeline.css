@@ -1,0 +1,167 @@
+.task-table-container {
+  max-width: 1050px;
+  margin: 5px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+.Date{
+  display: flex;
+  width: 60%;
+  justify-content:center ;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius:5px;
+  margin-left : 140px;
+  margin-top: 10px;
+  margin-right:50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-section {
+  display: flex;
+  justify-content:end;
+  align-items: center;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.search-section h3 {
+  font-size: 18px;
+  color: #555;
+}
+
+.search-bar {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.timezone-section {
+  margin-bottom: 20px;
+}
+
+.timezone-container {
+  display: flex;
+  /* width: 20%; */
+  justify-content: end;
+  margin-top: -10px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.timezone-icon {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.task-section {
+  margin-top: 20px;
+}
+
+.task-section h3 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.task-item {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.task-details {
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.task-details span {
+  flex: 1;
+}
+
+.task-details span:not(:last-child)::after {
+  content: "|";
+  margin-left: 8px;
+  color: #ccc;
+}
+.task-table-header, .task-item {
+  display: flex;
+  font-weight: bold;
+}
+.task-column {
+  flex: 1;
+  padding: 8px;
+}
+.inner-body{
+  
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.combined-component{
+  display: flex;
+  padding: 10px;
+  border-radius:5px;
+  margin-left : 75px;
+  margin-top: 10px;
+  margin-right:100px;
+}
+.left-container{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+}
+.date-picker-section{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+.working{
+ display: flex;
+ justify-content: end;
+ margin-top: -100px;
+ color: red;
+ font-size: 12px;
+ 
+}
+.date-picker-section button {
+  background-color: #235e91; /* Change to the desired color */
+  color: white;
+  border: none;
+  /* padding: 5px; */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+/* Change color when hovering over the button */
+.date-picker-section button:hover {
+  background-color: #5d61d7; /* Slightly darker shade on hover */
+}
