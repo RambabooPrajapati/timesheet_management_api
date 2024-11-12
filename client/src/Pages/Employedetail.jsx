@@ -1,6 +1,6 @@
 import React from "react";
-import Sidenavbar from "../components/Sidenavbar"; // Assuming this is your main sidebar navigation (left)
-import Sidebar from "../components/Sidebar"; // Import the Sidebar we created
+import Sidenavbar from "../Components/Sidenavbar"; // Assuming this is your main sidebar navigation (left)
+import Sidebar from "../Components/Sidebar"; // Import the Sidebar we created
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 

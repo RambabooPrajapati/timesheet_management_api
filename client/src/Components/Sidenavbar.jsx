@@ -352,4 +352,7 @@ export default function Sidenavbar() {
       </Drawer>
     </Box>
   );
-}
+};
+
+// This is a side navbar.jsx
+

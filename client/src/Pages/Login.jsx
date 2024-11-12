@@ -12,9 +12,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ApiInstance from "../ApiInstance";
 import { useNavigate } from "react-router-dom";
-import Google from "../components/Google";
-import Linkedin from "../components/Linkedin";
-import Facebook from "../components/Facebook";
+import Google from "../Components/Google";
+import Linkedin from "../Components/Linkedin";
+import Facebook from "../Components/Facebook";
 
 const Login = () => {
   const {

@@ -1,14 +1,14 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import ChangePassword from "./pages/ChangePassword";
-import EmailVerification from "./pages/EmailVerification";
-import ForgotPassword from "./pages/ForgotPassword";
-import Schedule from "./pages/Schedule";
-import EmployeeProfile from "./components/EmployeeProfile";
-import Employedetail from "./pages/Employedetail";
-import Admindashboard from "./pages/Admindashboard";
+import Home from "./Pages/Home";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
+import ChangePassword from "./Pages/ChangePassword";
+import EmailVerification from "./Pages/EmailVerification";
+import ForgotPassword from "./Pages/ForgotPassword";
+import Schedule from "./Pages/Schedule";
+import EmployeeProfile from "./Components/EmployeeProfile";
+import Employedetail from "./Pages/Employedetail";
+import Admindashboard from "./Pages/Admindashboard";
 
 const App = () => {
   const router = createBrowserRouter([
