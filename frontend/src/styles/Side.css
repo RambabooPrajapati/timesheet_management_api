@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    
+  }
+  
+  .sidebar1 {
+    width: auto;
+    background-color: #c178f6;
+    height: auto;
+    top: 96px;
+    position:absolute;
+    right:0px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    transition: right 0.10s ease-in;
+  }
+
+  .sidebar1.expanded .toggle-button {
+    right: -30px; /* Move the button 30px to the left when expanded */
+  }
+  
+  .sidebar1.open {
+    right: 100px; 
+    width: auto;
+    right: -0px;
+  }
+  
+  .sidebar1.closed {
+    right: -0px; 
+  }
+
+  .team-head{
+    margin-top: 35px;
+  }
+  
+  .toggle-button {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    overflow-y: hidden;
+  }
+  
+  .section {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .team-section p,
+  .individual-section p {
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .avatar-badge, .avatar{
+    position: relative;
+    margin-bottom: 5px;
+  }
+  
+  .avatar img, .avatar-badge img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+  
+  .badge {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    background-color: orange;
+    color: black;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+   .container {
+    display: flex;
+  }
+
+
+
+  

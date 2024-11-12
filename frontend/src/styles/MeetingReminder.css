@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    align-items: center;
+    /* background-color: #f0f0fa; */
+    padding: 10px;
+    width: 200px;
+    height: 90px;
+    margin-left: 40px;
+  }
+  
+  .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+  
+  .icon img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content .title {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .content .subtitle {
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+  }
+  
+  .content .description {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+  }
+  .calender-image{
+    height: 200px;
+    width: 200px;
+  }
+  

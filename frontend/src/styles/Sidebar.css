@@ -1,0 +1,26 @@
+.sidebar {
+    background-color: #3f51b5; /* Sidebar background color */
+    color: white; /* Text color */
+    height: 100vh; /* Full height */
+    padding: 20px; /* Padding around the content */
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+  }
+  
+  .logo {
+    width: 100px; /* Logo width */
+    margin-bottom: 20px; /* Space below the logo */
+  }
+  
+  .sidebar .MuiListItem-root {
+    color: white; /* Text color for list items */
+  }
+  
+  .sidebar .MuiListItem-root:hover {
+    background-color: #8491d9; /* Hover effect */
+  }
+  
+  .sidebar .MuiListItemIcon-root {
+    color: white; /* Icon color */
+  }
+  

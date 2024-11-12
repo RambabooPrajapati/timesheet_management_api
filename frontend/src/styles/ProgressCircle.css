@@ -1,0 +1,16 @@
+.color-of-progress{
+    color: green;
+}
+.progressbox{
+    margin-top:20px;
+}
+.progressbaradjust{
+    display: flex;
+    
+}
+.OuterboxCircle{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 10px;
+}

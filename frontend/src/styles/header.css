@@ -1,0 +1,32 @@
+.outerBox{
+    height: 150px;
+    width: 90%;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    justify-content: space-between;
+}
+.innerBox{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    align-content: center;
+    text-align: center;
+}
+.alertIcon{
+    height: 50px;
+    width: 50px;
+}
+.textBox{
+    align-content: center;
+}
+.sub-header{
+    width: 100%;
+}
+.boxText{
+    font-size: 15px;
+}

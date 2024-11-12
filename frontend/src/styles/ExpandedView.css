@@ -1,0 +1,67 @@
+.expanded-view2{
+    background-color: rgba(167, 103, 231, 1);
+    height: 864px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.right-arrow{
+    padding: 12px 0px 20px 0px;
+}
+.Icon2{
+    padding:10px 10px 0px 0px;
+}
+.IconDiv{
+    text-align: center;
+}
+.expand-header2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: white;
+}
+.labelpara{
+    color: white;
+    margin-top : 10px;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.TeamSectiondiv{
+    display: flex;
+    flex-direction: column;
+}
+.TeamHeading{
+    color: white;
+    padding: 10px 0px 0px 10px ;
+}
+.team-card1{
+    background-color: white;
+    margin: 6px 10px;
+    border-radius: 10px;
+    height: 65px;
+    color: black;
+    display: flex;
+}
+.avatarexpanded{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 4px;
+}
+
+.avatarIcon{
+   text-align: center; 
+}
+.Teamcarttext{
+    padding: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.teamcardpara{
+    color: black;
+}
+.textspan{
+    display: flex;
+    justify-content: space-between;
+}
