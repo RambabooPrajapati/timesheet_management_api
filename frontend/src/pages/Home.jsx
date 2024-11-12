@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { auth } from "../Components/firebase";
+import { auth } from "../components/firebase";
 
 function Home() {
   const [userDetails, setUserDetails] = useState(null);
