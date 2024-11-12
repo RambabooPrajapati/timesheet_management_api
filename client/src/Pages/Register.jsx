@@ -13,9 +13,9 @@ import {
 } from "@mui/material";
 import ApiInstance from "../ApiInstance";
 import { useNavigate } from "react-router-dom";
-import Google from "../Components/Google";
-import Linkedin from "../Components/Linkedin";
-import Facebook from "../Components/Facebook";
+import Google from "../components/Google";
+import Linkedin from "../components/Linkedin";
+import Facebook from "../components/Facebook";
 
 const Register = () => {
   const {
