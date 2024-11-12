@@ -11,7 +11,7 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <Admindashboard />,
     },
     { 
       path: "/register",
@@ -33,10 +33,22 @@ const App = () => {
       path: "/forgot-password",
       element: <ForgotPassword />,
     },
-    // {
-    //   path: "/schedule",
-    //   element: <Schedule />,
-    // },
+    {
+      path: "/schedule",
+      element: <Schedule />,
+    },
+    {
+      path: "/EmployeeProfile",
+      element: <EmployeeProfile />,
+    },
+    {
+      path: "/demo",
+      element: <Employedetail />,
+    },
+    {
+      path: "/Admindashboard",
+      element: <Admindashboard />,
+    },
   ]);
   return (
     <>
