@@ -5,7 +5,7 @@ import Login from "./Pages/Login";
 import ChangePassword from "./Pages/ChangePassword";
 import EmailVerification from "./Pages/EmailVerification";
 import ForgotPassword from "./Pages/ForgotPassword";
-import Schedule from "./Pages/Schedule";
+// import Schedule from "./Pages/Schedule";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -13,7 +13,7 @@ const App = () => {
       path: "/",
       element: <Home />,
     },
-    {
+    { 
       path: "/register",
       element: <Register />,
     },
