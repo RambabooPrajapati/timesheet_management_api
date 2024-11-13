@@ -1,62 +1,25 @@
 import React from 'react';
 import Sidenavbar from '../../../components/Sidenavbar';
-import { Box } from '@mui/material';
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
+import { Box, Button, Typography, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow } from '@mui/material';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO Code', minWidth: 100 },
-  {
-    id: 'population',
-    label: 'Population',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'size',
-    label: 'Size (km²)',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'density',
-    label: 'Density',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
+  { id: 'name', label: 'Project Name', minWidth: 170 },
+  { id: 'code', label: 'Project Manager Name', minWidth: 100 },
+  { id: 'client', label: 'Client Name', minWidth: 170, align: 'right' },
+  { id: 'date', label: 'Date', minWidth: 170, align: 'right' },
+  { id: 'duration', label: 'Duration', minWidth: 170, align: 'right' },
+  { id: 'status', label: 'Status', minWidth: 170, align: 'right' },
+  { id: 'action', label: 'Action', minWidth: 170 },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
+function createData(name, code, client, date, duration, status) {
+  return { name, code, client, date, duration, status };
 }
 
 const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('Project A', 'Alice', 'Client X', '2024-11-12', '6 months', 'In Progress'),
+  createData('Project B', 'Bob', 'Client Y', '2024-09-01', '3 months', 'Completed'),
+  createData('Project C', 'Charlie', 'Client Z', '2024-10-15', '1 year', 'Pending'),
 ];
 
 function Addproject() {
@@ -75,9 +38,16 @@ function Addproject() {
   return (
     <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>
       <Sidenavbar />
-      <h1>Add project</h1>
-      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-        <TableContainer sx={{ maxHeight: 440 }}>
+      <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "center", p: 3 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", width: '100%', mb: 2 }}>
+          <Typography variant="h4" component="h1" sx={{ fontWeight: 'bold', color: '#3f51b5', textAlign: 'center' }}>
+            Project List
+          </Typography>
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "space-between", width: '100%', mb: 3 }}>
+          <Button variant="contained" color="primary" sx={{ alignSelf: 'flex-start' }}>Add Project</Button>
+        </Box>
+        <TableContainer component={Paper} sx={{ maxWidth: 1200 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
@@ -93,24 +63,29 @@ function Addproject() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row) => {
-                  return (
-                    <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                      {columns.map((column) => {
-                        const value = row[column.id];
-                        return (
-                          <TableCell key={column.id} align={column.align}>
-                            {column.format && typeof value === 'number'
-                              ? column.format(value)
-                              : value}
-                          </TableCell>
-                        );
-                      })}
-                    </TableRow>
-                  );
-                })}
+              {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.name}>
+                  {columns.map((column) => {
+                    const value = row[column.id];
+                    return (
+                      <TableCell key={column.id} align={column.align}>
+                        {column.id === 'action' ? (
+                          <Box sx={{ display: 'flex', gap: 1 }}>
+                            <Button variant="contained" color="success" size="small">
+                              Update
+                            </Button>
+                            <Button variant="contained" color="error" size="small">
+                              Delete
+                            </Button>
+                          </Box>
+                        ) : (
+                          value
+                        )}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              ))}
             </TableBody>
           </Table>
         </TableContainer>
@@ -122,8 +97,9 @@ function Addproject() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          sx={{ mt: 2 }}
         />
-      </Paper>
+      </Box>
     </Box>
   );
 }

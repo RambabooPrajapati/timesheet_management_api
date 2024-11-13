@@ -214,7 +214,11 @@ export default function Sidenavbar() {
             </ListItemButton>
           </ListItem>
           
-          <ListItem disablePadding sx={{ display: "block" }}>
+          <ListItem disablePadding
+            sx={{ display: "block" }}
+            onClick={() => {
+              navigate("/Addproject");
+            }}>
             <ListItemButton
               sx={[
                 {
