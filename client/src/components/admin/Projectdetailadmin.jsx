@@ -99,7 +99,7 @@ const ProjectDetailsAdmin = () => {
       lead: "Kajal",
       progress: 86,
       status: "Completed",
-      dueDate: "30 May 2024",
+      dueDate: "30 May 2023",
     },
     {
       name: "world tour",
