@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import avtar from "../images/purpale.jpg";
+import avtar from "../images/avtar.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Button,
   TextField,
@@ -8,47 +11,48 @@ import {
   Typography,
   Container,
 } from "@mui/material";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import ApiInstance from "../ApiInstance";
 import { useNavigate } from "react-router-dom";
-import Google from "../Components/Google";
-import Linkedin from "../Components/Linkedin";
-import Facebook from "../Components/Facebook";
+import Google from "../components/Google";
+import Linkedin from "../components/Linkedin";
+import Facebook from "../components/Facebook";
 
-const Login = () => {
+const Register = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
+    reset,
   } = useForm();
   const password = watch("password");
-
-  const onSubmit = async (data) => {
-    const { email, password } = data;
-
-    try {
-      const response = await ApiInstance.post("/auth/login", {
-        email,
-        password,
-      });
-
-      if (response.status === 200) {
-        toast.success(response.data.message);
-        setTimeout(() => {
-          navigate("/"); // Navigate to the  home page after successful login
-        }, 2000);
-      } else {
-        toast.error(response.data.message);
-      }
-    } catch (error) {
-      console.error("Error:", error.response?.data?.message || error.message);
-      toast.error(error.response?.data?.message || "Login failed");
-    }
-  };
+  const [formReset, setFormReset] = useState(false);
 
   const navigate = useNavigate();
+
+  const onSubmit = async (formData) => {
+    const data = {
+      name: formData.fullName,
+      email: formData.email,
+      password: formData.password,
+    };
+
+    try {
+      await ApiInstance.post("/auth/register", data);
+      toast.success("Registration successful. Thank you!");
+      reset();
+      setFormReset(true);
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000); // Wait for 2 seconds before navigating to the login page
+    } catch (error) {
+      console.error(
+        "Error registering user",
+        error.response?.data || error.message
+      );
+      toast.error(`Registration failed: ${error.response?.data?.error || "Unknown error"}`);
+    }
+  };
 
   return (
     <>
@@ -106,7 +110,7 @@ const Login = () => {
               component="h1"
               variant="h5"
             >
-              Login
+              Registration
             </Typography>
 
             <Box
@@ -121,6 +125,19 @@ const Login = () => {
                 justifyContent: "center",
               }}
             >
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="fullName"
+                label="Full Name"
+                name="fullName"
+                autoComplete="name"
+                autoFocus
+                {...register("fullName", { required: "Full Name is required" })}
+                error={!!errors.fullName}
+                helperText={errors.fullName ? errors.fullName.message : ""}
+              />
               <TextField
                 margin="normal"
                 required
@@ -158,27 +175,25 @@ const Login = () => {
                 error={!!errors.password}
                 helperText={errors.password ? errors.password.message : ""}
               />
-
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  width: "100%",
-                  margin: "-10px",
-                }}
-              >
-                <p
-                  style={{
-                    color: "#A767E7",
-                    fontWeight: "bolder",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => navigate("/forgot-password")}
-                >
-                  Forgot Password?
-                </p>
-              </Box>
-
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="confirmPassword"
+                label="Confirm Password"
+                type="password"
+                id="confirmPassword"
+                autoComplete="current-password"
+                {...register("confirmPassword", {
+                  required: "Confirm Password is required",
+                  validate: (value) =>
+                    value === password || "Passwords do not match",
+                })}
+                error={!!errors.confirmPassword}
+                helperText={
+                  errors.confirmPassword ? errors.confirmPassword.message : ""
+                }
+              />
               <Button
                 type="submit"
                 fullWidth
@@ -189,11 +204,11 @@ const Login = () => {
                   fontWeight: "900",
                   mt: 2,
                   "&:hover": {
-                    backgroundColor: "#A767E7", // Keep the color the same on hover
+                    backgroundColor: "#A767E7",
                   },
                 }}
               >
-                Login
+                register
               </Button>
             </Box>
             <Box
@@ -206,7 +221,6 @@ const Login = () => {
               <Linkedin/>
               <Google/>
               <Facebook/>
-  
             </Box>
             <Link
               href="#"
@@ -218,13 +232,8 @@ const Login = () => {
                 textDecoration: "none",
               }}
             >
-              Doesn&apos;t have an account?
-              <p
-                style={{ color: "#A767E7", fontWeight: "bolder" }}
-                onClick={() => navigate("/register")}
-              >
-                Register
-              </p>
+              Already have an account?
+              <p style={{ color: "#A767E7", fontWeight: "bolder" }} onClick={() => navigate("/login")}>Login</p>
             </Link>
           </Container>
 
@@ -246,4 +255,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
