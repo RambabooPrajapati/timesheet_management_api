@@ -17,13 +17,14 @@ app.use(cors({
   credentials:true
 }));
 
-app.listen(port, () => {
-  console.log(`server listening on ${port}`);
-  DbConnect();
-});
-
 // authentication routes
 app.use("/auth", AuthRouter);
 
 // forgot-password routes
 app.use('/forgot',ForgotPasswordRouter)
+
+app.listen(port, () => {
+  console.log(`server listening on ${port}`);
+  DbConnect();
+});
+

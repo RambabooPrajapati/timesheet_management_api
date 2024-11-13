@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const DbConnect = () => {
-  mongoose.connect("mongodb://localhost:27017/tms").then(()=>{
+  mongoose.connect(`${process.env.MONGODB_URL}`).then(()=>{
     console.log("connection established");
   });
 };
