@@ -159,6 +159,61 @@ export default function Sidenavbar() {
               />
             </ListItemButton>
           </ListItem>
+         
+          <ListItem
+            disablePadding
+            sx={{ display: "block" }}
+            onClick={() => {
+              navigate("/Admindashboard");
+            }}
+          >
+            <ListItemButton
+              sx={[
+                {
+                  minHeight: 48,
+                  px: 2.5,
+                },
+                open
+                  ? {
+                      justifyContent: "initial",
+                    }
+                  : {
+                      justifyContent: "center",
+                    },
+              ]}
+            >
+              <ListItemIcon
+                sx={[
+                  {
+                    minWidth: 0,
+                    justifyContent: "center",
+                  },
+                  open
+                    ? {
+                        mr: 3,
+                      }
+                    : {
+                        mr: "auto",
+                      },
+                ]}
+              >
+                <GroupsOutlinedIcon sx={{ color: "#FFFFFF" }} />
+              </ListItemIcon>
+              <ListItemText
+                primary="ADD EMPLOYEE"
+                sx={[
+                  open
+                    ? {
+                        opacity: 1,
+                      }
+                    : {
+                        opacity: 0,
+                      },
+                ]}
+              />
+            </ListItemButton>
+          </ListItem>
+          
           <ListItem disablePadding sx={{ display: "block" }}>
             <ListItemButton
               sx={[
@@ -193,7 +248,7 @@ export default function Sidenavbar() {
                 <SourceOutlinedIcon sx={{ color: "#FFFFFF" }} />
               </ListItemIcon>
               <ListItemText
-                primary="PROJECT"
+                primary="ADD PROJECT"
                 sx={[
                   open
                     ? {
