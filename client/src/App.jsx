@@ -9,6 +9,7 @@ import Schedule from "./pages/Schedule";
 import EmployeeProfile from "./components/EmployeeProfile";
 import Employedetail from "./pages/Employedetail";
 import Admindashboard from "./pages/admin/Admindashboard";
+import Addproject from "./pages/admin/project/Addproject";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -51,6 +52,10 @@ const App = () => {
     {
       path: "/Admindashboard",
       element: <Admindashboard />,
+    },
+    {
+      path: "/Addproject",
+      element: <Addproject />,
     },
   ]);
   return (
