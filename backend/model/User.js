@@ -1,15 +1,9 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-  employeename: {
+  name: {
     type: String,
     required: true,
-  },
-  role: {
-    type: String,
-    required: true,
-    enum: ['admin', 'employee', 'manager', "teamlead"],
-    default: 'employee'
   },
   email: {
     type: String,
@@ -20,9 +14,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  avatar: {
+  role: {
     type: String,
     required: true,
+    enum: ['admin', 'employee', 'manager', "teamlead"],
+    default: 'employee'
+  },
+  avatar: {
+    type: String,
   },
   phone: {
     type: String,
