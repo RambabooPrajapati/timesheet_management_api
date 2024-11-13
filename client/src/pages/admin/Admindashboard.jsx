@@ -29,7 +29,7 @@ import ProjectDetailsAdmin from "../../components/admin/Projectdetailadmin";
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 // Sample datasets for different views
-const weekData = [10, 90, 30, 60, 50, 40, 20];
+const weekData = [10, 90, 30, 60, 50, 40, 50];
 const weekLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const monthData = [60, 70, 55, 85, 95, 65, 75, 90, 100, 75, 85, 90];
 const yearData2020 = [
